@@ -1,2 +1,2 @@
-# unix_scripts
-Miscellaneous Unix scripts
+# shell_scripts 
+Miscellaneous Unix/MacOS shell scripts
