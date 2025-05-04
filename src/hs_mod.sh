@@ -1,6 +1,8 @@
 #! /bin/sh
 for hs in src/**/*.hs; do
-    [ "$(sed -n '/^module LPFP where/!p;q' "$hs")" ] && sed '1i\
-module LPFP where
-' "$hs" >"$hs.hs" && mv "$hs.hs" "$hs"
-done
+    filename=$(basename "$hs")
+    module=${filename%.*}
+    subdir=$(basename $(dirname "$hs"))
+    sed "1 s/^.*$/module $subdir.$module where\n/" "$hs" > "$hs.tmp"  && mv "$hs.tmp" "$hs"
+    printf "$subdir.$module, "
+done > hs_mod.txt
