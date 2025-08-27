@@ -19,3 +19,7 @@ Script to setup a LaTeX template and repo for UNISA assignments. Usage:
 ```bash
 sh ./assignment_setup.sh <subject> <assignment_no> <unique_no> <due_date> <num_questions>
 ```
+
+## `check_encoding.sh`
+
+Script to print out the encoding of Haskell files to the console using Vim.
